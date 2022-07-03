@@ -1,0 +1,81 @@
+// Заголовки, общие БЄМ блоки и проче...
+.page-home {
+
+	// .page-home__main-fullscreen
+
+	&__main-fullscreen {
+	}
+
+	// .page-home__main-slider
+
+	&__main-slider {
+	}
+}
+
+
+
+.common-button {
+	font-weight: 600;
+	line-height: math.div(17 ,14 );
+	color: $white;
+	padding: rem(22) rem(87);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border: rem(1) solid $white;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.3s ease 0s;
+	@media (max-width:$mobileSmall){
+		display:flex;
+	}
+	span{
+		transition: all 0.3s ease 0s;
+	}
+	&::before{
+		content:'';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width:rem(30);
+		height: rem(30);
+		background-color: #fff;
+		transform:translate(50%, -50%) rotate(45deg);
+		transition: all 0.3s ease 0s;
+	}
+	@media (min-width:$tabletBig){
+		&:hover{
+			text-decoration: underline;
+			background-color: rgba(130, 130, 130, 0.527);
+			span{
+				transform:scale(1.2);
+			}
+			&::before{
+				transform:translate(50%, -50%) rotate(45deg) scale(1.5);
+				
+			}
+		}
+	}
+	&_black{
+		color: $mainColor;
+		border: rem(1) solid $mainColor;
+		&::before{
+			background-color: $mainColor;
+		}
+		@media (min-width:$tabletBig){
+			&:hover{
+				text-decoration: underline;
+				box-shadow: 0 0 rem(10) $mainColor;
+				background-color: $white;
+				span{
+					transform:scale(1.2);
+				}
+				&::before{
+					transform:translate(50%, -50%) rotate(45deg) scale(1.5);
+					
+				}
+			}
+		}
+	}
+}

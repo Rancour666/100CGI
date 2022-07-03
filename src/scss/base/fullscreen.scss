@@ -1,0 +1,24 @@
+/*
+[data-fullscreen] {
+	min-height: 100vh;
+	.touch & {
+		min-height: calc(var(--vh, 1vh) * 100);
+		@media (max-width: $mobile) {
+			transition: height 0.2s;
+		}
+	}
+}
+*/
+[data-fullscreen] {
+
+	
+	@media (max-width:em(1980)){
+		min-height: 100vh;
+		.touch & {
+			min-height: calc(var(--vh, 1vh) * 100);
+			@media (max-width: $mobile) {
+				transition: height 0.2s;
+			}
+		}
+	}
+}
