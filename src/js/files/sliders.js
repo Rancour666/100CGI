@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Thumbs, Autoplay } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -16,7 +16,7 @@ EffectFade, Lazy, Manipulation
 */
 
 // Стили Swiper
-// Базовые стили
+// Базовые стили 
 import "../../scss/base/swiper.scss";
 // Полный набор стилей из scss/libs/swiper.scss
 // import "../../scss/libs/swiper.scss";
@@ -27,12 +27,12 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.main-slider__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		new Swiper('.main-slider__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation],
+			modules: [Navigation, Thumbs, Autoplay],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
@@ -42,10 +42,95 @@ function initSliders() {
 
 			//touchRatio: 0,
 			//simulateTouch: false,
+			loop: true,
+			//preloadImages: false,
+			//lazy: true,
+			thumbs:{    //______ВКАЗУЕШ ОСНОВНОМУ СЛАЙДЕРУ ЩО ВІН БУДЕ ГОРТАТИСЯ ТАМБСАМИ
+				swiper:{
+					 el:'.main-slider__thumb-slider',   //---ВКАЗУЕШ ЩО ТАМБСИ ЦЕ ТВІЙ ТАМБСОВИЙ, ДРУГИЙ СЛАЙДЕР
+					 slidesPerView:4, //---ВКАЗУЕШ ЩО ТАМБСІВ ВІДІБРАЖАТИ ТРЕБА 4
+				}
+		},
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			/*
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			*/
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.main-slider__swiper-button-prev',
+				nextEl: '.main-slider__swiper-button-next',
+			},
+
+			// Брейкпоинты
+			/*
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+			// События
+			on: {
+
+			}
+		});
+	}
+	if (document.querySelector('.main-slider__thumb-slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.main-slider__thumb-slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Thumbs],
+         direction: 'vertical', //---РОБИШ ТАМБСОВИЙ СЛАЙДЕР ВЕРТИКАЛЬНИМ!!!!
+         slidesPerView: 4, //---ВКАЗУЕШ 4 ТАМБСА ПОКАЗУВАТИ!!!
+         spaceBetween: 16,
+         freeMode: true,
+         watchSlidesProgress: true,
+			//observer: true,
+			//observeParents: true,
+			//autoHeight: true,
+			speed: 800,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
 			//loop: true,
 			//preloadImages: false,
 			//lazy: true,
-
 			/*
 			// Эффекты
 			effect: 'fade',
@@ -72,10 +157,10 @@ function initSliders() {
 			*/
 
 			// Кнопки "влево/вправо"
-			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
-			},
+			//navigation: {
+			//	prevEl: '.main-slider__swiper-button-prev',
+			//	nextEl: '.main-slider__swiper-button-next',
+			//},
 
 			// Брейкпоинты
 			/*
