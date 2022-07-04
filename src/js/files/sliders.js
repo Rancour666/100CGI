@@ -38,7 +38,7 @@ function initSliders() {
 			slidesPerView: 1,
 			spaceBetween: 0,
 			autoHeight: true,
-			speed: 800,
+			speed: 2000,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -51,14 +51,14 @@ function initSliders() {
 					 slidesPerView:4, //---ВКАЗУЕШ ЩО ТАМБСІВ ВІДІБРАЖАТИ ТРЕБА 4
 				}
 		},
-			/*
+			
 			// Эффекты
 			effect: 'fade',
 			autoplay: {
 				delay: 5000,
 				disableOnInteraction: false,
 			},
-			*/
+			
 
 			// Пагинация
 			/*
