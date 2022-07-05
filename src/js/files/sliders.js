@@ -50,14 +50,13 @@ function initSliders() {
 					 el:'.main-slider__thumb-slider',   //---ВКАЗУЕШ ЩО ТАМБСИ ЦЕ ТВІЙ ТАМБСОВИЙ, ДРУГИЙ СЛАЙДЕР
 					 slidesPerView:4, //---ВКАЗУЕШ ЩО ТАМБСІВ ВІДІБРАЖАТИ ТРЕБА 4
 				}
-		},
-			
-			// Эффекты
-			effect: 'fade',
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
 			},
+			// Эффекты
+			//effect: 'fade',
+			//autoplay: {
+			//	delay: 5000,
+			//	disableOnInteraction: false,
+			//},
 			
 
 			// Пагинация
