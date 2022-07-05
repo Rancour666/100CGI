@@ -230,6 +230,14 @@
 	position: relative;
 	margin-top: rem(77);
 	margin-bottom: rem(90);
+	@media (max-width:em(1440)){
+	padding-top: rem(77);
+	padding-bottom: rem(90);
+	margin-top: rem(0);
+	margin-bottom: rem(0);
+
+	flex:1 1 auto;
+	}
 
 	// .main-slider__container-wide
 
@@ -239,8 +247,8 @@
 			min-height: rem(914);
 			align-items: center;
 		@media (max-width:em(1440)){
-			align-items: flex-start;
-			min-height: rem(0);
+			//align-items: flex-start;
+			min-height: 100%;
 		}
 
 		@media (max-width:$tabletBig){
