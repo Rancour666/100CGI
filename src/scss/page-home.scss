@@ -226,10 +226,6 @@
 }
 
 //=======================================MAIN-SLIDER=============================================================
-
-
-
-
 .main-slider {
 	position: relative;
 	margin-top: rem(77);
@@ -243,7 +239,8 @@
 			min-height: rem(914);
 			align-items: center;
 		@media (max-width:em(1440)){
-			//align-items: flex-start;
+			align-items: flex-start;
+			min-height: rem(0);
 		}
 
 		@media (max-width:$tabletBig){
@@ -415,8 +412,8 @@
 			//width: 50vw;
 			z-index: 1;
 			@media (max-width: em(1440)){
-				display: flex;
-				align-items: center;
+				//display: flex;
+				//align-items: center;
 			}
 		@media (max-width:$tabletBig){
 			width: 100%;
@@ -514,10 +511,10 @@
 		transform: translate(0, 0%);
 		z-index: 1;
 		@media (max-width:em(1440)){
-		box-shadow: 0 0 rem(20) rgba(0, 0, 0, 0.3);
+		//box-shadow: 0 0 rem(20) rgba(0, 0, 0, 0.3);
 		position: absolute;
 		//transform: translate(0, -100%);
-		top:rem(656);
+		top:rem(486);
 		}
 		@media (max-width:$tabletBig){
 			top:100%;
@@ -611,3 +608,56 @@
 }
 
 
+//______________________________________ARCHITECTURAL-BANNER___________________________________________________
+
+.architectural-banner {
+	position: relative;
+	z-index: 3;
+	@include adaptiveValue("padding-top",67 ,40,1920,992,1 );
+	@include adaptiveValue("padding-bottom",67 ,40,1920,992,1 );
+	background-color: #fff;
+	&::before{
+		content:'';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height: rem(1);
+		background-color: $mainColor;
+	}
+	&::after{
+		content:'';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 68.5%;
+		height: rem(1);
+		background-color: $mainColor;
+	}
+	&__container{
+		display: flex;
+		flex-direction: column;
+		gap:rem(40);
+	}
+	&__title {
+		align-self: flex-start;
+		font-family: 'Kaine';
+		font-weight: 900;
+		font-size: rem(72);
+		@include adaptiveValue("font-size",72 ,48,1920,992,1 );
+		line-height: math.div(83 ,72 );
+		color: $mainColor;
+		max-width: rem(887);
+		opacity: 0.3;
+	}
+
+	&__text {
+		align-self: flex-end;
+		font-size: rem(18);
+		line-height: math.div(22 , 18);
+		max-width: rem(480);
+		color: $mainColor;
+		opacity: 0.7;
+		p{&:not(:last-child) {margin-bottom: rem(20);}}
+	}
+}

@@ -10,6 +10,13 @@
 
 	&__main-slider {
 	}
+
+	&__architectural-banner {
+		&:not(:last-child) {
+			
+			&:not(:last-child) {@include adaptiveValue("margin-bottom",90 ,40,1920,992,1 );}
+		}
+	}
 }
 
 
