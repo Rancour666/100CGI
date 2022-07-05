@@ -60,6 +60,7 @@
 	&_black{
 		color: $mainColor;
 		border: rem(1) solid $mainColor;
+		background-color: #fff;
 		&::before{
 			background-color: $mainColor;
 		}

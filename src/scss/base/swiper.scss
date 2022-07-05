@@ -1,5 +1,11 @@
 .swiper {
-	overflow: hidden;
+	@media (min-width:1367.98px){
+		overflow: hidden;
+	}
+	
+	
+
+	
 }
 
 .swiper-wrapper {
