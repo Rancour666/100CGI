@@ -4,7 +4,7 @@
 	background: rgba(37, 37, 43);
 	position: relative;
 	overflow: hidden;
-	
+	z-index: 2;
 	@media (max-width: $tabletBig){
 		display: flex;
 		align-items: center;
@@ -239,6 +239,7 @@
 
 	&__container-wide {
 		display: flex;
+		position: relative;
 			min-height: rem(914);
 			align-items: center;
 		@media (max-width:em(1440)){
@@ -249,8 +250,46 @@
 			flex-direction: column;
 			min-height: rem(0);
 		}
+		&::before{
+			content:'';
+			position: absolute;
+			width: rem(670);
+			height: rem(670);
+			left: rem(320);
+			top: rem(-100);
+			border: rem(1) solid #E8E8E8;
+			border-radius: rem(98);
+			transform: rotate(30deg);
+			animation: decorRotate 50s linear 3s infinite forwards;
+	
+		}
+		&::after{
+			content:'';
+			position: absolute;
+			width: rem(670);
+			height: rem(670);
+			left: rem(-350);
+			top: rem(350);
+			border: rem(1) solid #E8E8E8;
+			border-radius: rem(98);
+			transform: rotate(30deg);
+			animation: decorRotateOpposite 50s linear 3s infinite forwards;
+		}
 	}
+	@keyframes decorRotateOpposite {
+		0%{
+			transform: rotate(30deg) scale(1);
 
+		}
+		50%{
+			transform: rotate(-150deg) scale(0.75) ;
+
+		}
+		100%{
+			transform: rotate(-330deg) scale(1);
+
+		}
+	}
 	// .main-slider__body
 
 	&__body {
@@ -268,7 +307,8 @@
 		padding-bottom: rem(50);
 		padding-right: rem(30);
 		padding-left: rem(30);
-		
+		position: relative;
+		z-index:3 ;
 		@media (min-width:$tablet){
 			@include adaptiveValue("padding-left",212 ,134,1920,768,1 );
 			@include adaptiveValue("padding-right",75 ,34,1920,768,1 );
@@ -467,19 +507,24 @@
 		width: rem(110);
 		height: rem(90);
 		background-color: $white;
+		position: absolute;
+		top:rem(679);
+		left: 0;
+		box-shadow: none;
+		transform: translate(0, 0%);
+		z-index: 1;
+		@media (max-width:em(1440)){
 		box-shadow: 0 0 rem(20) rgba(0, 0, 0, 0.3);
 		position: absolute;
-		right:  0;
-		bottom:rem(78);
-		z-index: 1;
-		transform: translate(0, -100%);
-		@media (min-width:em(1440.02)){
-			position: absolute;
-			top:rem(679);
-			left: 0;
-			box-shadow: none;
-			transform: translate(0, 0%);
+		//transform: translate(0, -100%);
+		top:rem(656);
 		}
+		@media (max-width:$tabletBig){
+			top:100%;
+			transform: translate(-100%, -100%);
+			left: 100%;
+		}
+
 		@media (max-width:$mobileSmall){
 		width: 100%;
 		height: rem(50);
