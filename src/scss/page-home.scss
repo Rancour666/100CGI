@@ -370,7 +370,7 @@
 		min-height: rem(30);
 		min-width: 100%;
 		color: $text2;
-		font-weight: 450;
+		font-weight: 500;
 		font-size: rem(20);
 		line-height: math.div(50 ,20 );
 		letter-spacing: 1.5%;
@@ -390,7 +390,7 @@
 		
 	}
 	.swiper-slide-thumb-active{
-		font-weight: 750;
+		font-weight: 700;
 		color:$mainColor;
 		&::before{
 			background-color: $mainColor;
@@ -486,7 +486,7 @@
 	}
 	// .main-slider__label-text
 	&__label-text {
-		font-weight: 750;
+		font-weight: 700;
 		font-size: rem(18);
 		line-height: math.div(22 ,18 );
 		position: absolute;
