@@ -1,3 +1,166 @@
 //====================================================================================================
+.footer {
+
+	// .footer__top
+
+	&__top {
+	}
+
+	// .footer__bottom
+
+	&__bottom {
+	}
+}
+
+
+
+
+
+.top-footer {
+	position: relative;
+
+
+
+
+
+	// .top-footer__container
+
+	&__container {
+		display: grid;
+		grid-template-columns: 25% 75%;
+	}
+
+	// .top-footer__content
+
+	&__content {
+
+	}
+
+	// .top-footer__body
+
+	&__body {
+		@include adaptiveValue("padding-top",93 ,50,1920,992,1 );
+		@include adaptiveValue("padding-bottom",65 ,30,1920,992,1 );
+		@include adaptiveValue("padding-left",112 ,20,1920,992,1 );
+		position: relative;
+		&::before{
+			content:'';
+			position: absolute;
+			width: 10000%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: $mainColor;
+		}
+	}
+
+	// .top-footer__menu
+
+	&__menu {
+	}
+}
+.content-top-footer {
+	@include adaptiveValue("padding-top",93 ,50,1920,992,1 );
+	// .content-top-footer__body
+
+	&__body {
+		position: relative;
+		z-index: 3;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+	}
+
+	// .content-top-footer__logo
+
+	&__logo {
+
+	}
+
+	// .content-top-footer__icon-links
+
+	&__icon-links {
+		display: flex;
+		//flex-direction: column;
+		gap:rem(24);
+
+	}
+
+	// .content-top-footer__icon-link
+
+	&__icon-link {
+		transition: all 0.3s ease 0s;
+		width: rem(24);
+		height: rem(24);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media (min-width:$tabletBig){
+			&:hover{
+				transform: scale(1.6)
+			}
+		}
+		&_insta{
+			font-size: rem(24);
+		}
+		&_vimeo{
+			font-size: rem(20);
+		}
+		&_linkedin{
+			font-size: rem(22);
+		}
+	}
+}
+
+.menu-footer {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	@include adaptiveValue("column-gap",100 ,20,1920,992,1 );
+	// .menu-footer__column
+
+	&__column {
+	}
+
+	// .menu-footer__title
+
+	&__title {
+		color: #fff;
+		padding-bottom: rem(10);
+		font-weight: 600;
+		font-size: rem(16);
+		line-height: math.div(20 ,16 );
+		line-height: 20px;
+	}
+
+	// .menu-footer__list
+
+	&__list {
+	}
+
+	// .menu-footer__item
+
+	&__item {
+	}
+
+	// .menu-footer__link
+
+	&__link {
+		color:#b2b2b2;
+		font-size: rem(14);
+		line-height: math.div(33 ,14 );
+	}
+}
+
+
+
+
+
+
+
+
+.bottom-footer {
+}
 
 //====================================================================================================
